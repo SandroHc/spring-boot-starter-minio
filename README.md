@@ -1,5 +1,40 @@
 # Spring Boot Starter Minio
 
+**This is a modified version of the original repository that works with Spring Boot 2.4.**
+
+You can use the following dependency while we wait for the original maintainer to merge the [PR](https://github.com/jlefebure/spring-boot-starter-minio/pull/12).
+
+If using Gradle (`build.gradle`):
+```groovy
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
+dependencies {
+    implementation 'net.sandrohc:spring-boot-starter-minio:1.7-SNAPSHOT'
+}
+```
+
+If using Maven (`pom.xml`):
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+<dependency>
+    <groupId>net.sandrohc</groupId>
+    <artifactId>spring-boot-starter-minio</artifactId>
+    <version>1.7-SNAPSHOT</version>
+</dependency>
+```
+
+For more information on this build, see: https://jitpack.io/#net.sandrohc/spring-boot-starter-minio
+
+----
+
 [![Build Status](https://travis-ci.org/jlefebure/spring-boot-starter-minio.svg?branch=master)](https://travis-ci.org/jlefebure/spring-boot-starter-minio)
 
 Spring Boot Starter which allow to connect to a Minio bucket, to save, get, remove an object. The starter also embed 
@@ -8,21 +43,6 @@ metrics and health check for Actuator.
 ## Quick start
 
 Just add the dependency to an existing Spring Boot project.
-
-Maven
-```xml
-<dependency>
-    <groupId>com.jlefebure</groupId>
-    <artifactId>spring-boot-starter-minio</artifactId>
-    <version>1.1</version>
-</dependency>
-```
-
-Gradle 
-```groovy
-    implementation 'com.jlefebure:spring-boot-starter-minio:1.1'
-```
-
 
 Then, add the following properties to your `application.properties` file.
 
